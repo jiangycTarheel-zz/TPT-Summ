@@ -1,0 +1,14 @@
+python3 evaluate_cnn.py \
+--dataset_name=xsum \
+--eval_dataset_name=xsum \
+--tokenizer_name=t5-small \
+--model_name_or_path=tpt-small-discrete \
+--run_id=00 \
+--evaluate_epoch=30 \
+--data_dir=data \
+--model_path=out \
+--num_beams=1 \
+--min_length=10 \
+--max_length=100 \
+--data_split=val \
+--output_filename=generated_summaries.txt
