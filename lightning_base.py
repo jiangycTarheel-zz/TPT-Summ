@@ -318,10 +318,7 @@ def generic_train(model: BaseTransformer, args: argparse.Namespace):
         train_params["gpus"] = 0
 
     if args.n_gpu > 1:
-        if args.dataloader == 'multifile':
-            train_params["distributed_backend"] = "dp"
-        else:
-            train_params["distributed_backend"] = "ddp"
+        train_params["distributed_backend"] = "ddp"
 
     trainer = pl.Trainer(**train_params)
 
